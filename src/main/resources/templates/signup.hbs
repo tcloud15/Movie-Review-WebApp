@@ -1,0 +1,37 @@
+{{> header.hbs}}
+
+<h2>Sign Up</h2>
+
+{{#successfulMsg}}
+<p style="font-weight: bold; color: red;">{{successfulMsg}}</p>
+{{/successfulMsg}}
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+{{#errorPwMsg}}
+<p style="font-weight: bold; color: red;">{{errorPwMsg}}</p>
+{{/errorPwMsg}}
+
+{{#errorUMsg}}
+<p style="font-weight: bold; color: red;">{{errorUMsg}}</p>
+{{/errorUMsg}}
+
+{{#login}}
+<p><a href="/login">{{login}}</a></p>
+{{/login}}
+
+<form method="post" action="/sitemember-signup">
+    <p><label>Username:</label><input type="text" name="uname"> </p>
+    <p><label>Password:</label><input type="password" name="pw"></p>
+    <p><label>Confirm password:</label><input type="password" name="confirmedpw"></p>
+    <p><button type="submit">Sign up</button></p>
+</form>
+
+<ul>
+    <li><a href="/login">Have an account? Click here to login!</a></li>
+    <li><a href="/homepage">Go back to homepage</a></li>
+</ul>
+
+{{> footer.hbs}}

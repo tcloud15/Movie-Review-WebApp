@@ -1,0 +1,32 @@
+{{> header.hbs}}
+
+<h2>Change Password</h2>
+
+{{#successfulMsg}}
+<p style="font-weight: bold; color: red;">{{successfulMsg}}</p>
+{{/successfulMsg}}
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+{{#login}}
+<p><a href="/login">{{login}}</a></p>
+{{/login}}
+
+{{#pass}}
+<form method="post" action="/user/change-password">
+    <p><label>Old password:</label><input type="password" name="oldpw"></p>
+    <p><label>New password:</label><input type="password" name="newpw"></p>
+    <p><label>Confirm password:</label><input type="password" name="confirmedpw"></p>
+    <p><button type="submit">Change</button></p>
+</form>
+{{/pass}}
+
+{{#beforeChange}}
+<form method="get" action="/user/home">
+    <p><button type="submit">Go back to main menu</button></p>
+</form>
+{{/beforeChange}}
+
+{{> footer.hbs}}

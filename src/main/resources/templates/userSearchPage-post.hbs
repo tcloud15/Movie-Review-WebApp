@@ -1,0 +1,30 @@
+{{> header.hbs }}
+
+<h2>List of movies</h2>
+
+<table>
+    <tr>
+        <th>Movie</th>
+        <th>US Release Date</th>
+        <th>Intl Release Date</th>
+        <th>Movie Rating</th>
+    </tr>
+    {{#memberSearch}}
+    <tr>
+        <td><a href="/user/member-movie-report/{{name}}/{{date}}/{{dateuk}}">{{name}}</a></td>
+        <td>{{date}}</td>
+        <td>{{dateuk}}</td>
+        <td>{{rating}}</td>
+    </tr>
+    {{/memberSearch}}
+</table>
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+<form method="get" action="/user/home">
+    <p><button type="submit">Go back to main menu</button></p>
+</form>
+
+{{> footer.hbs }}

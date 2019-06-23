@@ -1,0 +1,26 @@
+{{> header.hbs}}
+
+<form method="post" action="/admin/add-movie">
+    <p><label>Movie Name:</label><input name="name" type="text" size="20"></p>
+    <p><label>US Release Date:</label><input name="usdate" type="text" size="20"></p>
+    <p><label>International Release Date:</label><input name="ukdate" type="text" size="20"></p>
+    <p><label>Description:</label><input name="description" type="text" size="20"></p>
+    <p><label>Director:</label><input name="director" type="text" size="20"></p>
+    <p><label>Content Rating:</label><input name="rating" type="text" size="20"></p>
+    <p><label>Runtime:</label><input name="time" type="text" size="20"></p>
+    <p><button type="submit">Add</button></p>
+</form>
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+{{#successfulMsg}}
+<p style="font-weight: bold; color: red;">{{successfulMsg}}</p>
+{{/successfulMsg}}
+
+<form method="get" action="/admin/home">
+    <p><button type="submit">Go back to main menu</button></p>
+</form>
+
+{{> footer.hbs}}

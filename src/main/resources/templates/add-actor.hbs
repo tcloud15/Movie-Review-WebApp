@@ -1,0 +1,21 @@
+{{> header.hbs}}
+
+<form method="post" action="/admin/add-actor">
+    <p><label>Actor/Actress Name:</label><input name="aname" type="text" size="20"></p>
+    <p><label>Birthdate:</label><input name="abd" type="text" size="20"></p>
+    <p><button type="submit">Add</button></p>
+</form>
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+{{#successfulMsg}}
+<p style="font-weight: bold; color: red;">{{successfulMsg}}</p>
+{{/successfulMsg}}
+
+<form method="get" action="/admin/home">
+    <p><button type="submit">Go back to main menu</button></p>
+</form>
+
+{{> footer.hbs}}

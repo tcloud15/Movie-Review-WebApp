@@ -1,0 +1,20 @@
+{{> header.hbs}}
+
+<h1>Hi member {{uname}}!</h1>
+
+<form method="post" action="/user/user-search">
+    <label>Movie Name:</label><input name="mName" type="text" size="20">
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    <li><a href="/user/delete-review">Delete review</a></li>
+    <li><a href="/user/edit-review">Edit review</a></li>
+    <li><a href="/user/change-password">Change password</a></li>
+</ul>
+
+<form method="get" action="/homepage">
+    <button type="submit">Logout</button>
+</form>
+
+{{> footer.hbs}}

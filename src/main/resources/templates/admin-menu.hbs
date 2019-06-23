@@ -1,0 +1,27 @@
+{{> header.hbs}}
+
+<h1>Hi Admin {{uname}}!</h1>
+
+<form method="post" action="/admin/admin-search">
+    <label>Movie Name:</label><input name="mName" type="text" size="20">
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    <li><a href="/admin/add-movie">Add movie</a></li>
+    <li><a href="/admin/add-actor">Add actor</a></li>
+    <li><a href="/admin/add-genre">Add genre</a></li>
+    <li><a href="/admin/add-actsin">Add actor to movie</a></li>
+    <li><a href="/admin/add-describes">Add genre to movie</a></li>
+    <li><a href="/admin/edit-movie">Edit movie</a></li>
+    <li><a href="/admin/edit-review">Edit review</a> </li>
+    <li><a href="/admin/delete-review">Delete review</a></li>
+    <li><a href="/admin/delete-movie">Delete movie</a></li>
+    <li><a href="/admin/change-password">Change password</a></li>
+</ul>
+
+<form method="get" action="/homepage">
+    <button type="submit">Logout</button>
+</form>
+
+{{> footer.hbs}}

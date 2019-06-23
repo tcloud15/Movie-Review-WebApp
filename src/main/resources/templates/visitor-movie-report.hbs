@@ -1,0 +1,72 @@
+{{> header.hbs }}
+
+<h2>Movie Report</h2>
+<table>
+    <tr>
+        <th>Movie</th>
+        <th>US Release Date</th>
+        <th>Intl Release Date</th>
+        <th>Description</th>
+        <th>Director</th>
+        <th>Content Rating</th>
+        <th>Duration</th>
+        <th>Overall Rating</th>
+    </tr>
+    {{#movie}}
+    <tr>
+        <td>{{MovieName}}</td>
+        <td>{{USReleaseDate}}</td>
+        <td>{{IntlReleaseDate}}</td>
+        <td>{{Description}}</td>
+        <td>{{Director}}</td>
+        <td>{{ContentRating}}</td>
+        <td>{{Duration}}</td>
+        <td>{{Review}}</td>
+    </tr>
+    {{/movie}}
+</table>
+
+<p><b>Actors</b></p>
+{{#actor}}
+<p>
+    {{ActorName}}
+</p>
+{{/actor}}
+
+<p><b>Genre</b></p>
+{{#genre}}
+<p>
+    {{Genre}}
+</p>
+{{/genre}}
+
+<table>
+    <tr>
+        <th>rID</th>
+        <th>Date Written</th>
+        <th>Member Username</th>
+        <th>Movie Rating</th>
+        <th>Review</th>
+    </tr>
+    {{#review}}
+    <tr>
+        <td>{{rID}}</td>
+        <td>{{DateWritten}}</td>
+        <td>{{MemberUsername}}</td>
+        <td>{{mRating}}</td>
+        <td>{{rText}}</td>
+    </tr>
+    {{/review}}
+</table>
+
+<p><b>Wanna write a review?</b></p>
+<ul>
+    <li><a href="/login">Click here to login</a></li>
+    <li><a href="/sitemember-signup">Don't have an account? Click here to sign up!</a></li>
+</ul>
+
+<form method="get" action="/homepage">
+    <p><button type="submit">Go back to homepage</button></p>
+</form>
+
+{{> footer.hbs }}

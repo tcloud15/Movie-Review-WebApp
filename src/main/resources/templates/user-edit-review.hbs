@@ -1,0 +1,56 @@
+{{> header.hbs}}
+
+<p>All the reviews</p>
+<table>
+    <tr>
+        <th>rID</th>
+        <th>Member Username</th>
+        <th>Date Written</th>
+        <th>Movie Name</th>
+        <th>US Release Date</th>
+        <th>Intl Release Date</th>
+        <th>Movie Rating</th>
+        <th>Review</th>
+    </tr>
+    {{#review}}
+    <tr>
+        <td>{{rID}}</td>
+        <td>{{memberuname}}</td>
+        <td>{{datewritten}}</td>
+        <td>{{name}}</td>
+        <td>{{date}}</td>
+        <td>{{dateuk}}</td>
+        <td>{{rating}}</td>
+        <td>{{rtext}}</td>
+    </tr>
+    {{/review}}
+</table>
+
+<p>You can choose an option from this to edit in Review:</p>
+
+<ol>
+    <li>Movie Rating</li>
+    <li>Review</li>
+    <li>rID</li>
+</ol>
+
+<form method="post" action="/user/edit-review">
+    <p><label>Options number:</label><input name="num" type="text" size="20"></p>
+    <p><label>Change to:</label><input name="up" type="text" size="20"></p>
+    <p><label>rID:</label><input name="id" type="text" size="20"></p>
+    <p><button type="submit">Edit</button></p>
+</form>
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+{{#successfulMsg}}
+<p style="font-weight: bold; color: red;">{{successfulMsg}}</p>
+{{/successfulMsg}}
+
+<form method="get" action="/user/home">
+    <p><button type="submit">Go back to main menu</button></p>
+</form>
+
+{{> footer.hbs}}

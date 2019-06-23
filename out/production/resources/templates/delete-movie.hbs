@@ -1,0 +1,47 @@
+{{> header.hbs}}
+
+<p>All the movies</p>
+<table>
+<tr>
+    <tr>
+        <th>Movie</th>
+        <th>US Release Date</th>
+        <th>Intl Release Date</th>
+        <th>Description</th>
+        <th>Director</th>
+        <th>Content Rating</th>
+        <th>Duration</th>
+    </tr>
+    {{#movie}}
+    <tr>
+        <td>{{MovieName}}</td>
+        <td>{{USReleaseDate}}</td>
+        <td>{{IntlReleaseDate}}</td>
+        <td>{{Description}}</td>
+        <td>{{Director}}</td>
+        <td>{{ContentRating}}</td>
+        <td>{{Duration}}</td>
+    </tr>
+    {{/movie}}
+</table>
+
+<form method="post" action="/admin/delete-movie">
+    <p><label>Movie Name:</label><input name="mname" type="text" size="20"></p>
+    <p><label>US Release Date:</label><input name="usdate" type="text" size="20"></p>
+    <p><label>Intl Release Date:</label><input name="ukdate" type="text" size="20"></p>
+    <button type="submit">Delete</button>
+</form>
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+{{#successfulMsg}}
+<p style="font-weight: bold; color: red;">{{successfulMsg}}</p>
+{{/successfulMsg}}
+
+<form method="get" action="/admin/home">
+    <p><button type="submit">Go back to main menu</button></p>
+</form>
+
+{{> footer.hbs}}

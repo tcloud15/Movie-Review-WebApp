@@ -1,0 +1,36 @@
+{{> header.hbs}}
+
+<p>You can choose an option from this to edit in Movie:</p>
+
+<ol>
+    <li>Movie Name</li>
+    <li>US Release Date</li>
+    <li>Intl Release Date</li>
+    <li>Description</li>
+    <li>Director</li>
+    <li>Content Rating</li>
+    <li>Runtime</li>
+</ol>
+
+<form method="post" action="/admin/edit-movie">
+    <p><label>Options number:</label><input name="num" type="text" size="20"></p>
+    <p><label>Change to:</label><input name="up" type="text" size="20"></p>
+    <p><label>Movie Name:</label><input name="name" type="text" size="20"></p>
+    <p><label>US Release Date:</label><input name="usdate" type="text" size="20"></p>
+    <p><label>International Release Date:</label><input name="ukdate" type="text" size="20"></p>
+    <p><button type="submit">Edit</button></p>
+</form>
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+{{#successfulMsg}}
+<p style="font-weight: bold; color: red;">{{successfulMsg}}</p>
+{{/successfulMsg}}
+
+<form method="get" action="/admin/home">
+    <p><button type="submit">Go back to main menu</button></p>
+</form>
+
+{{> footer.hbs}}

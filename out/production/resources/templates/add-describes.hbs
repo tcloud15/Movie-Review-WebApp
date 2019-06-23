@@ -1,0 +1,23 @@
+{{> header.hbs}}
+
+<form method="post" action="/admin/add-describes">
+    <p><label>Genre:</label><input name="gname" type="text" size="20"></p>
+    <p><label>Movie Name:</label><input name="mname" type="text" size="20"></p>
+    <p><label>US Release Date:</label><input name="date" type="text" size="20"></p>
+    <p><label>International Release Date:</label><input name="ukdate" type="text" size="20"></p>
+    <p><button type="submit">Add</button></p>
+</form>
+
+{{#errorMsg}}
+<p style="font-weight: bold; color: red;">{{errorMsg}}</p>
+{{/errorMsg}}
+
+{{#successfulMsg}}
+<p style="font-weight: bold; color: red;">{{successfulMsg}}</p>
+{{/successfulMsg}}
+
+<form method="get" action="/admin/home">
+    <p><button type="submit">Go back to main menu</button></p>
+</form>
+
+{{> footer.hbs}}
